@@ -1,0 +1,23 @@
+<div class="container">
+  <h3>登録済み清掃業務一覧</h3>
+</div>
+<div class="container">
+  <table>
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>業務</th>
+        <th>所要時間（分）</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @cleaning_works.each do |cleaning_work| %>
+        <tr>
+          <td><%= cleaning_work.id %></td>
+          <td><%= cleaning_work.name %></td>
+          <td><%= cleaning_work.time_required %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
