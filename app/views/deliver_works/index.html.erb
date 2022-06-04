@@ -1,0 +1,23 @@
+<div class="container">
+  <h3>登録済み納品業務一覧</h3>
+</div>
+<div class="container">
+  <table>
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>業務</th>
+        <th>所要時間（分）</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @deliver_works.each do |deliver_work| %>
+        <tr>
+          <td><%= deliver_work.id %></td>
+          <td><%= deliver_work.name %></td>
+          <td><%= deliver_work.time_required %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
