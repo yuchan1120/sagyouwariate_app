@@ -1,0 +1,23 @@
+<div class="container">
+  <h3>登録済み商品管理業務一覧</h3>
+</div>
+<div class="container">
+  <table>
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>業務</th>
+        <th>所要時間（分）</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @product_management_works.each do |product_management_work| %>
+        <tr>
+          <td><%= product_management_work.id %></td>
+          <td><%= product_management_work.name %></td>
+          <td><%= product_management_work.time_required %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
