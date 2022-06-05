@@ -1,28 +1,28 @@
 <% if num == 4 %>
   <%= f.text_field :@column_a, list: "regular_work", class: "text_field", value: "温度点検　(10分)" %>
-    <%= render 'tables/datalist_regular_work' %>
+    <%= render 'tables/datalist_regular_work', regular_works: @regular_works %>
 <% elsif num == 20 %>
   <%= f.text_field :@column_a, list: "regular_work", class: "text_field", value: "鮮度管理　(15分)" %>
-    <%= render 'tables/datalist_regular_work' %>
+    <%= render 'tables/datalist_regular_work', regular_works: @regular_works %>
 <% elsif num == 32 %>
   <%= f.text_field :@column_a, list: "regular_work", class: "text_field", value: "鮮度管理　(15分)" %>
-    <%= render 'tables/datalist_regular_work' %>
+    <%= render 'tables/datalist_regular_work', regular_works: @regular_works %>
 <% elsif num == 52 %>
   <%= f.text_field :@column_a, list: "regular_work", class: "text_field", value: "鮮度管理　(15分)" %>
-    <%= render 'tables/datalist_regular_work' %>
+    <%= render 'tables/datalist_regular_work', regular_works: @regular_works %>
 <% elsif num == 68 %>
   <%= f.text_field :@column_a, list: "regular_work", class: "text_field", value: "鮮度管理　(15分)" %>
-    <%= render 'tables/datalist_regular_work' %>
+    <%= render 'tables/datalist_regular_work', regular_works: @regular_works %>
 <% elsif num == 72 %>
   <%= f.text_field :@column_a, list: "regular_work", class: "text_field", value: "ストアスタンプ日付変更　(2分)" %>
-    <%= render 'tables/datalist_regular_work' %>
+    <%= render 'tables/datalist_regular_work', regular_works: @regular_works %>
 <% elsif num == 76 %>
   <%= f.text_field :@column_a, list: "regular_work", class: "text_field", value: "深夜鮮度管理　(45分)" %>
-    <%= render 'tables/datalist_regular_work' %>
+    <%= render 'tables/datalist_regular_work', regular_works: @regular_works %>
 <% elsif num == 92 %>
   <%= f.text_field :@column_a, list: "regular_work", class: "text_field", value: "鮮度管理　(15分)" %>
-    <%= render 'tables/datalist_regular_work' %>
+    <%= render 'tables/datalist_regular_work', regular_works: @regular_works %>
 <% else %>
   <%= f.text_field :@column_a, list: "regular_work", class: "text_field" %>
-  <%= render 'tables/datalist_regular_work' %>
+  <%= render 'tables/datalist_regular_work', regular_works: @regular_works %>
 <% end %>
