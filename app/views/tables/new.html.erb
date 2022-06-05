@@ -31,12 +31,7 @@
                 <%= render 'tables/row_deliver_work', num: num, f: f %>
               </td>
               <td>
-                <%= f.text_field :@column_c, list: "product_management_work", class: "text_field" %>
-                <datalist id="product_management_work">
-                  <% @product_management_works.each do |product_management_work| %>
-                    <option value="<%= product_management_work.name %>　(<%= product_management_work.time_required %>分)">
-                  <% end %>
-                </datalist>
+                <%= render 'tables/row_product_management_work', num: num, f: f %>
               </td>
               <td>
                 <%= f.text_field :@column_d, list: "cleaning_work", class: "text_field" %>
