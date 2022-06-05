@@ -25,4 +25,8 @@ class TablesController < ApplicationController
       render "new"
     end
   end
+
+  def show
+    @table = Table.find(params[:id])
+  end
 end

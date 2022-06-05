@@ -5,13 +5,23 @@
   <table>
     <thead>
       <tr>
+        <th>id</th>
         <th>作業割当</th>
+        <th>更新日</th>
+        <th>作成日</th>
+        <th>参照</th>
       </tr>
     </thead>
     <tbody>
       <% @tables.each do |table| %>
         <tr>
+          <td><%= table.id %></td>
           <td><%= table.title %></td>
+          <td><%= table.updated_at.to_s(:datetime_jp) %></td>
+          <td><%= table.created_at.to_s(:datetime_jp) %></td>
+          <td>
+            <%= link_to "参照", table %>
+          </td>
         </tr>
       <% end %>
     </tbody>
