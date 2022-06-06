@@ -8,12 +8,6 @@ class TablesController < ApplicationController
     @deliver_works = DeliverWork.all
     @product_management_works = ProductManagementWork.all
     @cleaning_works = CleaningWork.all
-    96.times do |num|
-      @column_a = "a#{num + 1}"
-      @column_b = "b#{num + 1}"
-      @column_c = "c#{num + 1}"
-      @column_d = "d#{num + 1}"
-    end
     @table = Table.new
   end
 
