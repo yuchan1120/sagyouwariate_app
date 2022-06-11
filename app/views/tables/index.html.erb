@@ -11,6 +11,7 @@
         <th>作成日</th>
         <th>参照</th>
         <th>編集</th>
+        <th>削除</th>
       </tr>
     </thead>
     <tbody>
@@ -25,6 +26,9 @@
           </td>
           <td>
             <%= link_to "編集", [:edit, table] %>
+          </td>
+          <td>
+            <%= link_to "削除", table, method: :delete, data: { confirm: "本当に削除しますか？" } %>
           </td>
         </tr>
       <% end %>
