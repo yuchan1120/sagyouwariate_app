@@ -10,6 +10,7 @@
         <th>更新日</th>
         <th>作成日</th>
         <th>参照</th>
+        <th>編集</th>
       </tr>
     </thead>
     <tbody>
@@ -21,6 +22,9 @@
           <td><%= table.created_at.to_s(:datetime_jp) %></td>
           <td>
             <%= link_to "参照", table %>
+          </td>
+          <td>
+            <%= link_to "編集", [:edit, table] %>
           </td>
         </tr>
       <% end %>
