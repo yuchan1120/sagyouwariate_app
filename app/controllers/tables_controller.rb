@@ -40,4 +40,11 @@ class TablesController < ApplicationController
       render "edit"
     end
   end
+
+  def destroy
+    @table = Table.find(params[:id])
+    @table.destroy
+    redirect_to :tables
+  end
+
 end
