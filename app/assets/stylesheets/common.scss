@@ -112,6 +112,10 @@
   flex-wrap: wrap;
 }
 
+.page_title{
+  margin-bottom: 50px;
+}
+
 table th {
   background-color: #5eccad;
   padding: 10px 20px;
@@ -120,6 +124,7 @@ table th {
 table td {
   background-color: #e0f0eb;
   padding: 10px 20px;
+  text-align: center;
 }
 
 .notice {
@@ -133,4 +138,8 @@ table td {
 
 .text_field{
   width: 100%;
+}
+
+.immutable_color_link{
+  color: blue;
 }
