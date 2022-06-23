@@ -8,7 +8,7 @@ class RegularWorksController < ApplicationController
   end
 
   def create
-    @regular_work = RegularWork.new(params.require(:regular_work).permit(:name, :time_required))
+    @regular_work = RegularWork.new(regular_work_params)
     if @regular_work.save
       flash[:notice] = "定時業務を新規登録しました"
       redirect_to :regular_works
@@ -23,7 +23,7 @@ class RegularWorksController < ApplicationController
 
   def update
     @regular_work = RegularWork.find(params[:id])
-    if @regular_work.update(params.require(:regular_work).permit(:name, :time_required))
+    if @regular_work.update(regular_work_params)
       flash[:notice] = "IDが「#{@regular_work.id}」の定時業務を更新しました"
       redirect_to :regular_works
     else
@@ -36,5 +36,9 @@ class RegularWorksController < ApplicationController
     @regular_work.destroy
     flash[:notice] = "定時業務を削除しました"
     redirect_to :regular_works
+  end
+
+  def regular_work_params
+    params.require(:regular_work).permit(:name, :time_required)
   end
 end
