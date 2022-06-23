@@ -2,6 +2,7 @@ class CleaningWorksController < ApplicationController
   def index
     @cleaning_works = CleaningWork.all
   end
+  
   def new
     @cleaning_work = CleaningWork.new
   end
