@@ -2,12 +2,26 @@
   <h1 class="page_title">定時業務</h1>
 </div>
 <div class="container">
+  <% if flash[:notice] %>
+    <p class="notice"><%= flash[:notice] %></p>
+  <% end %>
+</div>
+<div class="search_form">
+  <form>
+    <input type="search" name="search" placeholder="キーワードを入力">
+    <input type="submit" name="submit" value="検索">
+  </form>
+  <%= link_to "新規登録", :new_regular_work, class: "new_button" %>
+</div>
+<div class="container">
   <table>
     <thead>
       <tr>
         <th>id</th>
         <th>業務</th>
         <th>所要時間（分）</th>
+        <th>編集</th>
+        <th>削除</th>
       </tr>
     </thead>
     <tbody>
@@ -16,6 +30,12 @@
           <td><%= regular_work.id %></td>
           <td><%= regular_work.name %></td>
           <td><%= regular_work.time_required %></td>
+          <td>
+            <%= link_to "編集", [:edit, regular_work], class: "immutable_color_link" %>
+          </td>
+          <td>
+            <%= link_to "削除", regular_work, method: :delete, data: { confirm: "本当に削除しますか？" }, class: "immutable_color_link" %>
+          </td>
         </tr>
       <% end %>
     </tbody>
