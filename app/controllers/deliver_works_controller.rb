@@ -38,6 +38,17 @@ class DeliverWorksController < ApplicationController
     redirect_to :deliver_works
   end
 
+  def search
+    if params[:keyword].present?
+      @deliver_works = DeliverWork.where(["name like?", "%#{params[:keyword]}%"])
+      flash[:notice] = "検索結果：#{@deliver_works.count}件"
+    else
+      @deliver_works = DeliverWork.all
+      flash[:notice] = "検索結果：0件"
+    end
+    render "index"
+  end
+
   def deliver_work_params
     params.require(:deliver_work).permit(:name, :time_required)
   end
