@@ -28,4 +28,10 @@ class RegularWorksController < ApplicationController
       render "edit"
     end
   end
+
+  def destroy
+    @regular_work = RegularWork.find(params[:id])
+    @regular_work.destroy
+    redirect_to :regular_works
+  end
 end
