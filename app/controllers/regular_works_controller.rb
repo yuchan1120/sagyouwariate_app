@@ -38,6 +38,17 @@ class RegularWorksController < ApplicationController
     redirect_to :regular_works
   end
 
+  def search
+    if params[:keyword].present?
+      @regular_works = RegularWork.where(["name like?", "%#{params[:keyword]}%"])
+      flash[:notice] = "検索結果：#{@regular_works.count}件"
+    else
+      @regular_works = RegularWork.all
+      flash[:notice] = "検索結果：0件"
+    end
+    render "index"
+  end
+
   def regular_work_params
     params.require(:regular_work).permit(:name, :time_required)
   end
