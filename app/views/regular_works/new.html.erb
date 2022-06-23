@@ -9,11 +9,11 @@
     <table>
       <tr>
         <th><%= f.label :name ,"業務" %></th>
-        <th><%= f.label :time_required ,"所要時間" %></th>
+        <th><%= f.label :time_required ,"所要時間（分）" %></th>
       </tr>
       <tr>
         <td><%= f.text_field :name %></td>
-        <td><%= f.text_field :time_required %></td>
+        <td><%= f.number_field :time_required %></td>
       </tr>
     </table>
   </div>
