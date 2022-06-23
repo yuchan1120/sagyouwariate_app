@@ -2,22 +2,15 @@
   <h1 class="margin_bottom_50px">商品管理業務</h1>
 </div>
 <div class="centered">
-  <table>
-    <thead>
-      <tr>
-        <th>id</th>
-        <th>業務</th>
-        <th>所要時間（分）</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @product_management_works.each do |product_management_work| %>
-        <tr>
-          <td><%= product_management_work.id %></td>
-          <td><%= product_management_work.name %></td>
-          <td><%= product_management_work.time_required %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <% if flash[:notice] %>
+    <p class="notice"><%= flash[:notice] %></p>
+  <% end %>
 </div>
+<div class="search_form">
+  <form>
+    <input type="search" name="search" placeholder="キーワードを入力">
+    <input type="submit" name="submit" value="検索">
+  </form>
+  <%= link_to "新規登録", :new_product_management_work, class: "new_button" %>
+</div>
+<%= render 'shared/works_index', works:@product_management_works %>
