@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   resources :product_management_works
   resources :cleaning_works
   get 'search_deliver_work' => 'deliver_works#search'
+  get 'search_product_management_work' => 'product_management_works#search'
   get 'search_cleaning_work' => 'cleaning_works#search'
 end
