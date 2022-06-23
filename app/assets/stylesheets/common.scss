@@ -112,6 +112,30 @@
   flex-wrap: wrap;
 }
 
+.search_form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1em;
+}
+
+.new_button{
+  color: #fff;
+  background-color: #2e90fa;
+  border-color: #2e90fa;
+  padding: 5px 16px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  white-space: nowrap;
+  vertical-align: middle;
+  border: 1px solid;
+  border-radius: 6px;
+  margin-left: 5px;
+  text-decoration: none;
+}
+
 .page_title{
   margin-bottom: 50px;
 }
@@ -142,4 +166,11 @@ table td {
 
 .immutable_color_link{
   color: blue;
+}
+
+.table_bottom{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1em;
 }

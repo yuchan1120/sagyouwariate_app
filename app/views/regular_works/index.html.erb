@@ -1,6 +1,13 @@
 <div class="container">
   <h1 class="page_title">定時業務</h1>
 </div>
+<div class="search_form">
+  <form>
+    <input type="search" name="search" placeholder="キーワードを入力">
+    <input type="submit" name="submit" value="検索">
+  </form>
+  <%= link_to "新規登録", :new_regular_work, class: "new_button" %>
+</div>
 <div class="container">
   <table>
     <thead>
