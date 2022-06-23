@@ -7,10 +7,10 @@
   <% end %>
 </div>
 <div class="search_form">
-  <form>
-    <input type="search" name="search" placeholder="キーワードを入力">
-    <input type="submit" name="submit" value="検索">
-  </form>
+  <%= form_with url: search_deliver_work_path, method: :get, local: true do |f| %>
+    <%= f.text_field :keyword, placeholder: "キーワードを入力" %>
+    <%= f.submit :検索 %>
+  <% end %>
   <%= link_to "新規登録", :new_deliver_work, class: "new_button" %>
 </div>
 <%= render 'shared/works_index', works:@deliver_works %>

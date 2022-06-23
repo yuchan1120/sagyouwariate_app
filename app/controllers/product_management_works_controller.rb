@@ -38,6 +38,17 @@ class ProductManagementWorksController < ApplicationController
     redirect_to :product_management_works
   end
 
+  def search
+    if params[:keyword].present?
+      @product_management_works = ProductManagementWork.where(["name like?", "%#{params[:keyword]}%"])
+      flash[:notice] = "検索結果：#{@product_management_works.count}件"
+    else
+      @product_management_works = ProductManagementWork.all
+      flash[:notice] = "検索結果：0件"
+    end
+    render "index"
+  end
+
   def product_management_work_params
     params.require(:product_management_work).permit(:name, :time_required)
   end

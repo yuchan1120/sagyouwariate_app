@@ -2,7 +2,7 @@ class CleaningWorksController < ApplicationController
   def index
     @cleaning_works = CleaningWork.all
   end
-  
+
   def new
     @cleaning_work = CleaningWork.new
   end
@@ -36,6 +36,17 @@ class CleaningWorksController < ApplicationController
     @cleaning_work.destroy
     flash[:notice] = "清掃業務を削除しました"
     redirect_to :cleaning_works
+  end
+
+  def search
+    if params[:keyword].present?
+      @cleaning_works = CleaningWork.where(["name like?", "%#{params[:keyword]}%"])
+      flash[:notice] = "検索結果：#{@cleaning_works.count}件"
+    else
+      @cleaning_works = CleaningWork.all
+      flash[:notice] = "検索結果：0件"
+    end
+    render "index"
   end
 
   def cleaning_work_params
