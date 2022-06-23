@@ -15,4 +15,17 @@ class RegularWorksController < ApplicationController
       render "new"
     end
   end
+
+  def edit
+    @regular_work = RegularWork.find(params[:id])
+  end
+
+  def update
+    @regular_work = RegularWork.find(params[:id])
+    if @regular_work.update(params.require(:regular_work).permit(:name, :time_required))
+      redirect_to :regular_works
+    else
+      render "edit"
+    end
+  end
 end
