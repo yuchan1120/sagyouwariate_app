@@ -1,6 +1,7 @@
 class TablesController < ApplicationController
   def index
     @tables = Table.all
+    flash[:notice] = nil
   end
 
   def new
@@ -56,7 +57,7 @@ class TablesController < ApplicationController
       flash[:notice] = "検索結果：#{@tables.count}件"
     else
       @tables = Table.all
-      flash[:notice] = "検索結果：0件"
+      flash[:notice] = nil
     end
     render "index"
   end

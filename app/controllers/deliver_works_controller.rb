@@ -1,6 +1,7 @@
 class DeliverWorksController < ApplicationController
   def index
     @deliver_works = DeliverWork.all
+    flash[:notice] = nil
   end
 
   def new
@@ -44,7 +45,7 @@ class DeliverWorksController < ApplicationController
       flash[:notice] = "検索結果：#{@deliver_works.count}件"
     else
       @deliver_works = DeliverWork.all
-      flash[:notice] = "検索結果：0件"
+      flash[:notice] = nil
     end
     render "index"
   end
