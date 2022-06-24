@@ -6,6 +6,13 @@
     <p class="notice"><%= flash[:notice] %></p>
   <% end %>
 </div>
+<div class="search_form">
+  <%= form_with url: search_table_path, method: :get, local: true do |f| %>
+    <%= f.text_field :keyword, placeholder: "キーワードを入力" %>
+    <%= f.submit :検索 %>
+  <% end %>
+  <%= link_to "新規登録", :new_table, class: "new_button" %>
+</div>
 <div class="centered">
   <table>
     <thead>
