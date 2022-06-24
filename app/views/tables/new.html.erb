@@ -1,9 +1,10 @@
 <%= form_with model: @table do |f| %>
   <div class="centered">
-    <h1>新規作成</h1>
+    <h1>作業割当</h1>
   </div>
-  <div class="centered">
-    <h3>
+  <div class="vertically_aligned_and_centered">
+    <h2>新規作成</h2>
+    <h3 class="margin_top_0">
       <%= f.label :name ,"タイトル" %>：<%= f.text_field :title %>　<%= f.submit "保存"%>
     </h3>
   </div>

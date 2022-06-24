@@ -112,6 +112,17 @@
   flex-wrap: wrap;
 }
 
+.vertically_aligned_and_centered{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-flow: column;
+}
+
+.margin_top_0{
+  margin-top: 0;
+}
+
 .search_form{
   display: flex;
   justify-content: center;
@@ -134,10 +145,6 @@
   border-radius: 6px;
   margin-left: 5px;
   text-decoration: none;
-}
-
-.margin_bottom_50px{
-  margin-bottom: 50px;
 }
 
 table th {
