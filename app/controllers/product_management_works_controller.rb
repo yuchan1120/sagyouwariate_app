@@ -1,6 +1,7 @@
 class ProductManagementWorksController < ApplicationController
   def index
     @product_management_works = ProductManagementWork.all
+    flash[:notice] = nil
   end
 
   def new
@@ -44,7 +45,7 @@ class ProductManagementWorksController < ApplicationController
       flash[:notice] = "検索結果：#{@product_management_works.count}件"
     else
       @product_management_works = ProductManagementWork.all
-      flash[:notice] = "検索結果：0件"
+      flash[:notice] = nil
     end
     render "index"
   end

@@ -1,6 +1,7 @@
 class RegularWorksController < ApplicationController
   def index
     @regular_works = RegularWork.all
+    flash[:notice] = nil
   end
 
   def new
@@ -44,7 +45,7 @@ class RegularWorksController < ApplicationController
       flash[:notice] = "検索結果：#{@regular_works.count}件"
     else
       @regular_works = RegularWork.all
-      flash[:notice] = "検索結果：0件"
+      flash[:notice] = nil
     end
     render "index"
   end

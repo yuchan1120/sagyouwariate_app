@@ -1,6 +1,7 @@
 class CleaningWorksController < ApplicationController
   def index
     @cleaning_works = CleaningWork.all
+    flash[:notice] = nil
   end
 
   def new
@@ -44,7 +45,7 @@ class CleaningWorksController < ApplicationController
       flash[:notice] = "検索結果：#{@cleaning_works.count}件"
     else
       @cleaning_works = CleaningWork.all
-      flash[:notice] = "検索結果：0件"
+      flash[:notice] = nil
     end
     render "index"
   end
