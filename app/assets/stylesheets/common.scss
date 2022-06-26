@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 0.5rem;
 }
 
 .logo_icon{
@@ -17,11 +18,10 @@
   position: relative;
   background-color: #54c3b4;
   margin-bottom: 50px;
-  padding-bottom: 1rem;
 }
 
 .nav__item{
-  padding: 0, 10px;
+  padding: 1rem;
   font-size: large;
   transition: all 0.2s;
 }
@@ -31,7 +31,6 @@
 }
 
 .nav__item a {
-  padding: 1rem;
   color: #ffffff;
   font-weight: bold;
   text-decoration: none;
@@ -92,6 +91,37 @@
     position: absolute;
     right: 1rem;
     top: 0.5rem;
+  }
+}
+
+.rightside{
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  padding-top: 1em;
+  padding-right: 1em;
+}
+
+.sign_in_link{
+  color: white;
+  text-decoration: none;
+  border: solid;
+  border-color: white;
+  border-radius: 8px;
+  padding: 0.5em;
+}
+
+.sign_in_link:hover {
+  opacity: 0.7;
+  }
+
+@media (max-width: 809px) {
+  .rightside{
+    top: 90px;
+  }
+  .sign_in_link{
+    color: #54c3b4;
+    border-color: #54c3b4;
   }
 }
 
@@ -160,7 +190,19 @@ table td {
 
 .notice {
   background-color: #ccf;
-  padding: 5px;
+}
+
+.notice {
+  background-color: #3cb371;
+  color: white;
+  text-align: center;
+  margin: 0;
+}
+
+.alert {
+  background-color: #ff69b4;
+  color: white;
+  text-align: center;
 }
 
 .sagyouwariate{

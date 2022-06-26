@@ -1,6 +1,8 @@
 class CleaningWorksController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
-    @cleaning_works = CleaningWork.all
+    @cleaning_works = CleaningWork.where("user_id LIKE?", "#{current_user.id}")
     flash[:notice] = nil
   end
 
@@ -41,16 +43,16 @@ class CleaningWorksController < ApplicationController
 
   def search
     if params[:keyword].present?
-      @cleaning_works = CleaningWork.where(["name like?", "%#{params[:keyword]}%"])
+      @cleaning_works = CleaningWork.where(["user_id like? AND name like?", "#{current_user.id}", "%#{params[:keyword]}%"])
       flash[:notice] = "検索結果：#{@cleaning_works.count}件"
     else
-      @cleaning_works = CleaningWork.all
+      @cleaning_works = CleaningWork.where("user_id LIKE?", "#{current_user.id}")
       flash[:notice] = nil
     end
     render "index"
   end
 
   def cleaning_work_params
-    params.require(:cleaning_work).permit(:name, :time_required)
+    params.require(:cleaning_work).permit(:name, :time_required, :user_id)
   end
 end
