@@ -95,6 +95,43 @@
   }
 }
 
+.rightside{
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  padding-top: 1em;
+  padding-right: 1em;
+}
+
+.sign_in_link{
+  color: white;
+  text-decoration: none;
+  border: solid;
+  border-color: white;
+  border-radius: 8px;
+  padding: 0.5em;
+}
+
+.sign_in_link:hover {
+  opacity: 0.7;
+  }
+
+@media (max-width: 809px) {
+  .rightside{
+    top: 180px;
+  }
+  .sign_in_link{
+    color: #54c3b4;
+    border-color: #54c3b4;
+  }
+}
+
+@media (max-width: 599px) {
+  .rightside{
+    top: 100px;
+  }
+}
+
 .footer {
   bottom: 0;
   width: 100%;
