@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => {
+    :registrations => 'users/registrations',
+  }
   get 'cleaning_works/index'
   get 'product_management_works/index'
   root 'top#index'
