@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 0.5rem;
 }
 
 .logo_icon{
@@ -17,11 +18,10 @@
   position: relative;
   background-color: #54c3b4;
   margin-bottom: 50px;
-  padding-bottom: 1rem;
 }
 
 .nav__item{
-  padding: 0, 10px;
+  padding: 1rem;
   font-size: large;
   transition: all 0.2s;
 }
@@ -31,7 +31,6 @@
 }
 
 .nav__item a {
-  padding: 1rem;
   color: #ffffff;
   font-weight: bold;
   text-decoration: none;
@@ -191,7 +190,19 @@ table td {
 
 .notice {
   background-color: #ccf;
-  padding: 5px;
+}
+
+.notice {
+  background-color: #3cb371;
+  color: white;
+  text-align: center;
+  margin: 0;
+}
+
+.alert {
+  background-color: #ff69b4;
+  color: white;
+  text-align: center;
 }
 
 .sagyouwariate{
