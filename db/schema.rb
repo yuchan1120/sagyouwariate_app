@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_26_072330) do
+ActiveRecord::Schema.define(version: 2022_06_26_093141) do
 
   create_table "cleaning_works", force: :cascade do |t|
     t.string "name"
     t.integer "time_required"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
   end
 
   create_table "deliver_works", force: :cascade do |t|
@@ -24,6 +25,7 @@ ActiveRecord::Schema.define(version: 2022_06_26_072330) do
     t.integer "time_required"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
   end
 
   create_table "product_management_works", force: :cascade do |t|
@@ -31,6 +33,7 @@ ActiveRecord::Schema.define(version: 2022_06_26_072330) do
     t.integer "time_required"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
   end
 
   create_table "regular_works", force: :cascade do |t|
@@ -38,6 +41,7 @@ ActiveRecord::Schema.define(version: 2022_06_26_072330) do
     t.integer "time_required"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
   end
 
   create_table "tables", force: :cascade do |t|
