@@ -1,4 +1,6 @@
 class CleaningWorksController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
     @cleaning_works = CleaningWork.where("user_id LIKE?", "#{current_user.id}")
     flash[:notice] = nil

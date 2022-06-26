@@ -1,4 +1,6 @@
 class ProductManagementWorksController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
     @product_management_works = ProductManagementWork.where("user_id LIKE?", "#{current_user.id}")
     flash[:notice] = nil

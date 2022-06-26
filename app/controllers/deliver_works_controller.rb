@@ -1,4 +1,6 @@
 class DeliverWorksController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
     @deliver_works = DeliverWork.where("user_id LIKE?", "#{current_user.id}")
     flash[:notice] = nil

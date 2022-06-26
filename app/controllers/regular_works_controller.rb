@@ -1,4 +1,6 @@
 class RegularWorksController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
     @regular_works = RegularWork.where("user_id LIKE?", "#{current_user.id}")
     flash[:notice] = nil
