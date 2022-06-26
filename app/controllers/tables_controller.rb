@@ -53,10 +53,10 @@ class TablesController < ApplicationController
 
   def search
     if params[:keyword].present?
-      @tables = Table.where(["title like?", "%#{params[:keyword]}%"])
+      @tables = Table.where(["user_id like? AND name like?", "#{current_user.id}", "%#{params[:keyword]}%"])
       flash[:notice] = "検索結果：#{@tables.count}件"
     else
-      @tables = Table.all
+      @tables = Table.where("user_id LIKE?", "#{current_user.id}")
       flash[:notice] = nil
     end
     render "index"
