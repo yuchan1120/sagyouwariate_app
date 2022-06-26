@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'cleaning_works/index'
   get 'product_management_works/index'
   root 'top#index'
