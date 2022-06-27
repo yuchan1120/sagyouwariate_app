@@ -1,9 +1,9 @@
 class TablesController < ApplicationController
   before_action :authenticate_user!
-  
+
   def index
     @tables = Table.where("user_id LIKE?", "#{current_user.id}")
-    flash[:notice] = nil
+    flash[:search_results] = nil
   end
 
   def new
@@ -56,10 +56,10 @@ class TablesController < ApplicationController
   def search
     if params[:keyword].present?
       @tables = Table.where(["user_id like? AND name like?", "#{current_user.id}", "%#{params[:keyword]}%"])
-      flash[:notice] = "検索結果：#{@tables.count}件"
+      flash[:search_results] = "検索結果：#{@tables.count}件"
     else
       @tables = Table.where("user_id LIKE?", "#{current_user.id}")
-      flash[:notice] = nil
+      flash[:search_results] = nil
     end
     render "index"
   end
