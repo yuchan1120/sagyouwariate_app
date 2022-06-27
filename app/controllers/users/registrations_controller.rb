@@ -8,6 +8,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     @user = User.new(user_params)
       if @user.save
+        set_flash_message! :notice, :signed_up
         sign_in(resource_name, resource)
         create_default_works
         redirect_to :tables

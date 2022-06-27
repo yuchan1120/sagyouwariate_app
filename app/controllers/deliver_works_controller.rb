@@ -1,9 +1,9 @@
 class DeliverWorksController < ApplicationController
   before_action :authenticate_user!
-  
+
   def index
     @deliver_works = DeliverWork.where("user_id LIKE?", "#{current_user.id}")
-    flash[:notice] = nil
+    flash[:search_results] = nil
   end
 
   def new
@@ -44,10 +44,10 @@ class DeliverWorksController < ApplicationController
   def search
     if params[:keyword].present?
       @deliver_works = DeliverWork.where(["user_id like? AND name like?", "#{current_user.id}", "%#{params[:keyword]}%"])
-      flash[:notice] = "検索結果：#{@deliver_works.count}件"
+      flash[:search_results] = "検索結果：#{@deliver_works.count}件"
     else
       @deliver_works = DeliverWork.where("user_id LIKE?", "#{current_user.id}")
-      flash[:notice] = nil
+      flash[:search_results] = nil
     end
     render "index"
   end

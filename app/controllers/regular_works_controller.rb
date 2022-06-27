@@ -1,9 +1,9 @@
 class RegularWorksController < ApplicationController
   before_action :authenticate_user!
-  
+
   def index
     @regular_works = RegularWork.where("user_id LIKE?", "#{current_user.id}")
-    flash[:notice] = nil
+    flash[:search_results] = nil
   end
 
   def new
@@ -44,10 +44,10 @@ class RegularWorksController < ApplicationController
   def search
     if params[:keyword].present?
       @regular_works = RegularWork.where(["user_id like? AND name like?", "#{current_user.id}", "%#{params[:keyword]}%"])
-      flash[:notice] = "検索結果：#{@regular_works.count}件"
+      flash[:search_results] = "検索結果：#{@regular_works.count}件"
     else
       @regular_works = RegularWork.where("user_id LIKE?", "#{current_user.id}")
-      flash[:notice] = nil
+      flash[:search_results] = nil
     end
     render "index"
   end
