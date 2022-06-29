@@ -1,0 +1,2 @@
+class DeliverWorkColumn < ApplicationRecord
+end

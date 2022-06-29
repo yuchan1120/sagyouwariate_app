@@ -1,0 +1,2 @@
+class CleaningWorkColumn < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class ProductManagementWorkColumn < ApplicationRecord
+end

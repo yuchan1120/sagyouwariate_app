@@ -1,0 +1,2 @@
+class RegularWorkColumn < ApplicationRecord
+end
