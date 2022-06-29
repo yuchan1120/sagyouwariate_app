@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_29_070639) do
+ActiveRecord::Schema.define(version: 2022_06_29_092541) do
 
   create_table "cleaning_work_columns", charset: "utf8mb3", force: :cascade do |t|
     t.integer "table_id"
@@ -447,6 +447,17 @@ ActiveRecord::Schema.define(version: 2022_06_29_070639) do
   create_table "regular_works", charset: "utf8mb3", force: :cascade do |t|
     t.string "name"
     t.integer "time_required"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+  end
+
+  create_table "rows", charset: "utf8mb3", force: :cascade do |t|
+    t.string "regular_work"
+    t.string "deliver_work"
+    t.string "product_management_work"
+    t.string "cleaning_work"
+    t.integer "table_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"

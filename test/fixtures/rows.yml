@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  regular_work: MyString
+  deliver_work: MyString
+  product_management_work: MyString
+  cleaning_work: MyString
+  table_id: 1
+
+two:
+  regular_work: MyString
+  deliver_work: MyString
+  product_management_work: MyString
+  cleaning_work: MyString
+  table_id: 1

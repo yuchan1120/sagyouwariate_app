@@ -1,0 +1,46 @@
+<%= form_with model: @form, url: rows_path, method: :post, local: true do |form| %>
+  <div class="centered">
+    <h1>作業割当</h1>
+  </div>
+  <div class="vertically_aligned_and_centered">
+    <h2>新規作成</h2>
+    <h3 class="margin_top_0">
+      <%= form.submit "保存"%>
+    </h3>
+  </div>
+  <div class="centered">
+    <table class="sagyouwariate">
+      <thead>
+        <tr>
+          <th>定時業務</th>
+          <th>納品業務</th>
+          <th>商品管理業務</th>
+          <th>清掃業務</th>
+        </tr>
+      </thead>
+        <tbody>
+          <%= form.fields_for :rows do |f| %>
+            <tr>
+              <td>
+                  <%= f.text_field :regular_work, list: "regular_work", class: "text_field" %>
+                  <%= render 'tables/datalist_regular_work', regular_works: @regular_works %>
+              </td>
+              <td>
+                <%= f.text_field :deliver_work, list: "deliver_work", class: "text_field" %>
+                <%= render 'tables/datalist_deliver_work', deliver_works: @deliver_works %>
+              </td>
+              <td>
+                <%= f.text_field :product_management_work, list: "product_management_work", class: "text_field" %>
+                <%= render 'tables/datalist_product_management_work', product_management_works: @product_management_works %>
+              </td>
+              <td>
+                <%= f.text_field :cleaning_work, list: "cleaning_work", class: "text_field" %>
+                <%= render 'tables/datalist_cleaning_work', cleaning_works: @cleaning_works %>
+              </td>
+            </tr>
+            <%= f.hidden_field :user_id, value: current_user.id %>
+          <% end %>
+        </tbody>
+    </table>
+  </div>
+<% end %>
