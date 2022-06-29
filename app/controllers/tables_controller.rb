@@ -26,6 +26,7 @@ class TablesController < ApplicationController
 
   def show
     @table = Table.find(params[:id])
+    @rows = Row.where(table_id: @table.id)
   end
 
   def edit

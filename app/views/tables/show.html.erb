@@ -18,22 +18,22 @@
       </tr>
     </thead>
       <tbody>
-        <% 96.times do |num|%>
+        <% @rows.each_with_index do |row, num| %>
           <tr>
             <td>
               <%= render 'tables/row_time', num: num %>
             </td>
             <td>
-              <%= @table.send("a#{num + 1}") %>
+              <%= row.regular_work %>
             </td>
             <td>
-              <%= @table.send("b#{num + 1}") %>
+              <%= row.deliver_work %>
             </td>
             <td>
-              <%= @table.send("c#{num + 1}") %>
+              <%= row.product_management_work %>
             </td>
             <td>
-              <%= @table.send("d#{num + 1}") %>
+              <%= row.cleaning_work %>
             </td>
           </tr>
         <% end %>

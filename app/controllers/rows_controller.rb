@@ -4,6 +4,8 @@ class RowsController < ApplicationController
     @deliver_works = DeliverWork.all
     @product_management_works = ProductManagementWork.all
     @cleaning_works = CleaningWork.all
+    Table.create(title: "新しい作業割当", user_id: current_user.id)
+    @table = Table.last
     @form = Form::Table.new
   end
 

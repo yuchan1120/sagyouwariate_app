@@ -39,6 +39,7 @@
               </td>
             </tr>
             <%= f.hidden_field :user_id, value: current_user.id %>
+            <%= f.hidden_field :table_id, value: @table.id %>
           <% end %>
         </tbody>
     </table>
